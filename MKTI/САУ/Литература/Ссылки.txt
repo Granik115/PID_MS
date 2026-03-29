@@ -1,0 +1,5 @@
+http://3v-services.com/books/978-5-97060-766-4/978-5-97060-766-4_SimInTech-02.pdf
+
+https://www.mathworks.com/help/physmod/sps/ref/pmsm.html;jsessionid=e639df16b1b436ab2484e7bfc110
+
+https://bitbucket.org/niietcm4/motorcontroldemo/src/master/

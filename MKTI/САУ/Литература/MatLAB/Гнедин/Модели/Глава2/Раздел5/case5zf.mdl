@@ -1,0 +1,4057 @@
+Model {
+  Name			  "case5zf"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  PreLoadFcn		  "assignin('base','Ts',[50e-6])"
+  Created		  "Thu Dec  3 15:18:18 1998"
+  Creator		  "sybille"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "gnedin pa"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Jun 15 15:42:41 2005"
+  ModelVersionFormat	  "1.%<AutoIncrement:270>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Diagnostics"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "FixedStepDiscrete"
+  SolverMode		  "SingleTasking"
+  StartTime		  "0.0"
+  StopTime		  "1"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "Ts"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-2"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  off
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "none"
+  UnconnectedOutputMsg	  "none"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  off
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Clock
+      DisplayTime	      off
+    }
+    Block {
+      BlockType		      CombinatorialLogic
+      TruthTable	      "[0 0;0 1;0 1;1 0;0 1;1 0;1 0;1 1]"
+    }
+    Block {
+      BlockType		      ComplexToMagnitudeAngle
+      Output		      "Magnitude and angle"
+    }
+    Block {
+      BlockType		      ComplexToRealImag
+      Output		      "Real and imag"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      ShowAdditionalParam     off
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      DataType		      "auto"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Derivative
+    }
+    Block {
+      BlockType		      DiscreteIntegrator
+      IntegratorMethod	      "Forward Euler"
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      SampleTime	      "1"
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      DiscreteStateSpace
+      A			      "1"
+      B			      "1"
+      C			      "1"
+      D			      "1"
+      X0		      "0"
+      SampleTime	      "1"
+      Realization	      "auto"
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      DiscreteTransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 0.5]"
+      SampleTime	      "1"
+      Realization	      "auto"
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      ShowOutputPort	      off
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      From
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      SampleTime	      "-1"
+      Interpolate	      on
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ShowAdditionalParam     off
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Goto
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      HitCross
+      HitCrossingOffset	      "0"
+      HitCrossingDirection    "either"
+      ShowOutputPort	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      InitialCondition
+      Value		      "1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      ShowAdditionalParam     off
+      AllPortsSameDT	      on
+      OutDataTypeMode	      "Logical (see Advanced Sim. Parameters)"
+      LogicDataType	      "uint(8)"
+    }
+    Block {
+      BlockType		      Lookup
+      InputValues	      "[-4:5]"
+      OutputValues	      " rand(1,10)-0.5"
+      ShowAdditionalParam     off
+      LookUpMeth	      "Interpolation-Extrapolation"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+    }
+    Block {
+      BlockType		      MinMax
+      Function		      "min"
+      Inputs		      "1"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Relay
+      OnSwitchValue	      "eps"
+      OffSwitchValue	      "eps"
+      OnOutputValue	      "1"
+      OffOutputValue	      "0"
+      ShowAdditionalParam     off
+      OutputDataTypeScalingMode	"All ports same datatype"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      ConRadixGroup	      "Use specified scaling"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Advanced Sim. Parameters)"
+      LogicDataType	      "uint(8)"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Scope
+      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Selector
+      InputType		      "Vector"
+      ElementSrc	      "Internal"
+      Elements		      "1"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      StateSpace
+      A			      "1"
+      B			      "1"
+      C			      "1"
+      D			      "1"
+      X0		      "0"
+      AbsoluteTolerance	      "auto"
+      Realization	      "auto"
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TransportDelay
+      DelayTime		      "1"
+      InitialInput	      "0"
+      BufferSize	      "1024"
+      PadeOrder		      "0"
+      TransDelayFeedthrough   off
+    }
+    Block {
+      BlockType		      Trigonometry
+      Operator		      "sin"
+      OutputSignalType	      "auto"
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "case5zf"
+    Location		    [2, 84, 1014, 716]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "85"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      " 50 Hz\n345kV  "
+      Ports		      [1, 3]
+      Position		      [1060, 415, 1110, 490]
+      Orientation	      "up"
+      NamePlacement	      "alternate"
+      SourceBlock	      "powerlib_extras/Three-Phase\nLibrary/Inductive "
+"source\nwith neutral"
+      SourceType	      "3-phase inductive source - Ungrounded neutral"
+      V			      "345e3/sqrt(3)*sqrt(2)"
+      Phi		      "0"
+      F			      "50"
+      R			      "0"
+      L			      " 28.0e-3\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " 60 Hz\n 500kV"
+      Ports		      [1, 3]
+      Position		      [31, 405, 79, 475]
+      Orientation	      "up"
+      SourceBlock	      "powerlib_extras/Three-Phase\nLibrary/Inductive "
+"source\nwith neutral"
+      SourceType	      "3-phase inductive source - Ungrounded neutral"
+      V			      "500e3/sqrt(3)*sqrt(2)"
+      Phi		      "0"
+      F			      "60"
+      R			      "0"
+      L			      "98.03e-3"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "0.5 H"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [1, 1]
+      Position		      [665, 149, 700, 171]
+      SourceBlock	      "powerlib2/Elements/Series RLC Branch"
+      SourceType	      "Series RLC Branch"
+      a			      "1"
+      b			      "0.5"
+      c			      "inf"
+      mesure		      "None"
+      PSBOutputType	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "0.5 H "
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [1, 1]
+      Position		      [485, 150, 520, 170]
+      SourceBlock	      "powerlib2/Elements/Series RLC Branch"
+      SourceType	      "Series RLC Branch"
+      a			      "1"
+      b			      "0.5"
+      c			      "inf"
+      mesure		      "None"
+      PSBOutputType	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "1200 MVA"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [3, 6]
+      Position		      [235, 126, 305, 209]
+      SourceBlock	      "powerlib2/Elements/Three-Phase\nTransformer\n(T"
+"hree Windings)"
+      SourceType	      "Three-Phase Transformer (Three Windings)"
+      confi		      "ABC as input terminals"
+      nom		      "[ 1200e6 , 60 ]"
+      ydw1		      "Yg"
+      w1		      "[ 500e3*0.9 0.0025  0 ]"
+      ydw2		      "Y"
+      w2		      " [ 200e3 0.0025 0.24]  "
+      ydw3		      "Delta (D1)"
+      w3		      " [ 200e3 0.0025 0.24 ] "
+      ynsat		      off
+      rmag		      "500"
+      lm		      "500"
+      sat		      "[0 0; 1 1.2; 2 1.1]"
+      hyst		      off
+      matfile		      "'hysteresis'"
+      sif		      off
+      ifl		      "[0.8 -0.8 0.7]"
+      initialslopes	      "[+1 +1 +1]"
+      mesure		      "None"
+      PSBOutputType	      "111111"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "1200 MVA1"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [3, 6]
+      Position		      [880, 125, 950, 210]
+      Orientation	      "left"
+      SourceBlock	      "powerlib2/Elements/Three-Phase\nTransformer\n(T"
+"hree Windings)"
+      SourceType	      "Three-Phase Transformer (Three Windings)"
+      confi		      "ABC as input terminals"
+      nom		      "[ 1200e6 , 50 ]"
+      ydw1		      "Yg"
+      w1		      "[ 345e3*0.96 0.0025  0 ]"
+      ydw2		      "Y"
+      w2		      " [ 200e3  0.0025 0.24]  "
+      ydw3		      "Delta (D1)"
+      w3		      " [ 200e3 0.0025 0.24 ] "
+      ynsat		      off
+      rmag		      "500"
+      lm		      "500"
+      sat		      "[0 0; 1 1.2; 2 1.1]"
+      hyst		      off
+      matfile		      "'hysteresis'"
+      sif		      off
+      ifl		      "[0.8 -0.8 0.7]"
+      initialslopes	      "[+1 +1 +1]"
+      mesure		      "None"
+      PSBOutputType	      "111111"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "3- Phase Parallel RLC"
+      Ports		      [3, 3]
+      Position		      [29, 325, 81, 385]
+      Orientation	      "up"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Elements/3-Phase\nParallel RLC Branch"
+      SourceType	      "3-phase parallel RLC element "
+      R			      "26.07"
+      L			      "48.86e-3"
+      C			      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "3- Phase Parallel RLC2"
+      Ports		      [3, 3]
+      Position		      [1059, 325, 1111, 385]
+      Orientation	      "up"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Elements/3-Phase\nParallel RLC Branch"
+      SourceType	      "3-phase parallel RLC element "
+      R			      "6.205"
+      L			      "13.96e-3"
+      C			      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "300 km"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [1, 1]
+      Position		      [545, 150, 640, 170]
+      SourceBlock	      "powerlib2/Elements/Distributed Parameters Line"
+      SourceType	      "Distributed Parameters Line"
+      n			      "1"
+      f			      "60"
+      r			      "0.015"
+      l			      "0.792e-3"
+      c			      "14.4e-9"
+      lgt		      "300"
+      x1		      "[0 0 0 0; 0.0001244 0 0 0; 0.0002488 0 0 0; 0.0"
+"003733 0 0 0; 0.0004977 0 0 0; 0.0006221 0 0 0]"
+      x2		      "[0 0 0 0; 0.0001244 0 0 0; 0.0002488 0 0 0; 0.0"
+"003733 0 0 0; 0.0004977 0 0 0; 0.0006221 0 0 0]"
+      x3		      "[0 0 0 0; 0.0001244 0 0 0; 0.0002488 0 0 0; 0.0"
+"003733 0 0 0; 0.0004977 0 0 0; 0.0006221 0 0 0]"
+      x4		      "[0 0 0 0; 0.0001244 0 0 0; 0.0002488 0 0 0; 0.0"
+"003733 0 0 0; 0.0004977 0 0 0; 0.0006221 0 0 0]"
+      x5		      "0"
+      mesure		      "None"
+      PSBOutputType	      "111111111111111111111111111111"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "A-G Fault"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [2, 1]
+      Position		      [315, 35, 350, 75]
+      SourceBlock	      "powerlib2/Elements/Breaker"
+      SourceType	      "Breaker"
+      a			      "0.01"
+      c			      "0"
+      rs		      "inf"
+      cs		      "inf"
+      times		      "[ 4/60  5/60 ]"
+      Ts		      "0"
+      comext		      on
+      mesure		      "None"
+      PSBOutputType	      "1"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "A>pu"
+      Position		      [340, 275, 370, 305]
+      Orientation	      "left"
+      ForegroundColor	      "blue"
+      Gain		      "1/2000"
+      Port {
+	PortNumber		1
+	Name			"Id (pu)"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "A>pu3"
+      Position		      [805, 260, 835, 290]
+      ForegroundColor	      "blue"
+      Gain		      "1/2000"
+      Port {
+	PortNumber		1
+	Name			"Id (pu)"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "AC fault\nTimer"
+      Ports		      [0, 1]
+      Position		      [255, 50, 285, 80]
+      SourceBlock	      "powerlib_extras/Control \nBlocks/Timer"
+      SourceType	      "Timer"
+      t			      "[ 0.6 0.7]*100"
+      e			      "[ 1 0 ]"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Block"
+      Position		      [180, 525, 210, 555]
+      ForegroundColor	      "blue"
+      Time		      "0.02"
+      Before		      "1"
+      After		      "0"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DC Fault \nTimer"
+      Ports		      [0, 1]
+      Position		      [565, 50, 595, 80]
+      SourceBlock	      "powerlib_extras/Control \nBlocks/Timer"
+      SourceType	      "Timer"
+      t			      "[0.6 0.65]*100"
+      e			      "[ 1 0 ]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DC fault"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [2, 1]
+      Position		      [625, 36, 665, 74]
+      SourceBlock	      "powerlib2/Elements/Breaker"
+      SourceType	      "Breaker"
+      a			      "1"
+      c			      "0"
+      rs		      "inf"
+      cs		      "inf"
+      times		      "[ 4/60  5/60 ]"
+      Ts		      "0"
+      comext		      on
+      mesure		      "None"
+      PSBOutputType	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Discret System Block"
+      Ports		      []
+      Position		      [321, 632, 435, 663]
+      DropShadow	      on
+      ShowName		      off
+      FontName		      "new century schoolbook"
+      FontSize		      12
+      SourceBlock	      "powerlib2/Discrete System"
+      SourceType	      "PSB option block system"
+      methode		      "off"
+      Ts		      "Ts"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Filters 50Hz"
+      Ports		      [3]
+      Position		      [985, 259, 1050, 311]
+      Orientation	      "left"
+      ShowName		      off
+      TreatAsAtomicUnit	      off
+      MaskDisplay	      "disp('AC filters\\n50 Hz\\n600 Mvar')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Filters 50Hz"
+	Location		[677, 196, 1335, 682]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "A"
+	  Position		  [95, 25, 125, 40]
+	  Orientation		  "down"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "B"
+	  Position		  [265, 25, 295, 40]
+	  Orientation		  "down"
+	  Port			  "2"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "C"
+	  Position		  [460, 30, 490, 45]
+	  Orientation		  "down"
+	  Port			  "3"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "\n23-25 th\n150 Mvar"
+	  Ports			  [3, 3]
+	  Position		  [485, 185, 525, 235]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nSeries RLC Bran"
+"ch "
+	  SourceType		  "3-phase RLC series element"
+	  R			  "0"
+	  L			  "0"
+	  C			  "4.012e-6"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "11th\n150 Mvar\nQ=100 "
+	  Ports			  [3, 3]
+	  Position		  [195, 220, 245, 300]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nSeries RLC Bran"
+"ch "
+	  SourceType		  "3-phase RLC series element"
+	  R			  "0.7214"
+	  L			  "20.87e-3"
+	  C			  "4.012e-6"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "13th\n150 Mvar\nQ=100"
+	  Ports			  [3, 3]
+	  Position		  [325, 220, 375, 300]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nSeries RLC Bran"
+"ch "
+	  SourceType		  "3-phase RLC series element"
+	  R			  "0.6104"
+	  L			  "14.95e-3"
+	  C			  "4.012e-6"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar1"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [3, 1]
+	  Position		  [54, 340, 106, 345]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "3"
+	  sorties		  "1"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar2"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [3, 1]
+	  Position		  [194, 340, 246, 345]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "3"
+	  sorties		  "1"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar3"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [3, 1]
+	  Position		  [324, 340, 376, 345]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "3"
+	  sorties		  "1"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar4"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [3, 1]
+	  Position		  [479, 340, 531, 345]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "3"
+	  sorties		  "1"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar7"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1, 4]
+	  Position		  [51, 85, 169, 90]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "1"
+	  sorties		  "4"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar8"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1, 4]
+	  Position		  [221, 90, 339, 95]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "1"
+	  sorties		  "4"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar9"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1, 4]
+	  Position		  [416, 90, 534, 95]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "1"
+	  sorties		  "4"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "C\n150 Mvar"
+	  Ports			  [3, 3]
+	  Position		  [55, 220, 105, 300]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nSeries RLC Bran"
+"ch "
+	  SourceType		  "3-phase RLC series element"
+	  R			  "0"
+	  L			  "0"
+	  C			  "4.012e-6"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Ground"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1]
+	  Position		  [490, 375, 520, 405]
+	  Orientation		  "down"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Ground (input)"
+	  SourceType		  "Ground"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Ground1"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1]
+	  Position		  [335, 380, 365, 410]
+	  Orientation		  "down"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Ground (input)"
+	  SourceType		  "Ground"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Ground2"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1]
+	  Position		  [205, 375, 235, 405]
+	  Orientation		  "down"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Ground (input)"
+	  SourceType		  "Ground"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Ground3"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1]
+	  Position		  [65, 370, 95, 400]
+	  Orientation		  "down"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Ground (input)"
+	  SourceType		  "Ground"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Q=3"
+	  Ports			  [3, 3]
+	  Position		  [480, 250, 530, 300]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nParallel RLC Br"
+"anch"
+	  SourceType		  "3-phase parallel RLC element "
+	  R			  "99.19"
+	  L			  "4.385e-3"
+	  C			  "0"
+	}
+	Line {
+	  SrcBlock		  "A"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "B"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "C"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "13th\n150 Mvar\nQ=100"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "13th\n150 Mvar\nQ=100"
+	  SrcPort		  2
+	  DstBlock		  "Bus Bar3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "13th\n150 Mvar\nQ=100"
+	  SrcPort		  3
+	  DstBlock		  "Bus Bar3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Q=3"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Q=3"
+	  SrcPort		  2
+	  DstBlock		  "Bus Bar4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Q=3"
+	  SrcPort		  3
+	  DstBlock		  "Bus Bar4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar7"
+	  SrcPort		  1
+	  DstBlock		  "C\n150 Mvar"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar8"
+	  SrcPort		  1
+	  Points		  [0, 25; -155, 0]
+	  DstBlock		  "C\n150 Mvar"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bus Bar8"
+	  SrcPort		  3
+	  Points		  [0, 50; 55, 0]
+	  DstBlock		  "13th\n150 Mvar\nQ=100"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bus Bar8"
+	  SrcPort		  4
+	  Points		  [0, 45; 180, 0]
+	  DstBlock		  "\n23-25 th\n150 Mvar"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bus Bar7"
+	  SrcPort		  3
+	  Points		  [0, 70; 210, 0]
+	  DstBlock		  "13th\n150 Mvar\nQ=100"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar7"
+	  SrcPort		  4
+	  Points		  [0, 70; 335, 0]
+	  DstBlock		  "\n23-25 th\n150 Mvar"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar9"
+	  SrcPort		  1
+	  Points		  [0, 15; -335, 0]
+	  DstBlock		  "C\n150 Mvar"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar9"
+	  SrcPort		  3
+	  Points		  [0, 25; -125, 0]
+	  DstBlock		  "13th\n150 Mvar\nQ=100"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar9"
+	  SrcPort		  4
+	  DstBlock		  "\n23-25 th\n150 Mvar"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "C\n150 Mvar"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "C\n150 Mvar"
+	  SrcPort		  2
+	  DstBlock		  "Bus Bar1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "C\n150 Mvar"
+	  SrcPort		  3
+	  DstBlock		  "Bus Bar1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar1"
+	  SrcPort		  1
+	  DstBlock		  "Ground3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "11th\n150 Mvar\nQ=100 "
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "11th\n150 Mvar\nQ=100 "
+	  SrcPort		  2
+	  DstBlock		  "Bus Bar2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "11th\n150 Mvar\nQ=100 "
+	  SrcPort		  3
+	  DstBlock		  "Bus Bar2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar8"
+	  SrcPort		  2
+	  Points		  [0, 45; -45, 0]
+	  DstBlock		  "11th\n150 Mvar\nQ=100 "
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bus Bar7"
+	  SrcPort		  2
+	  Points		  [0, 80; 110, 0]
+	  DstBlock		  "11th\n150 Mvar\nQ=100 "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar9"
+	  SrcPort		  2
+	  Points		  [0, 35; -225, 0]
+	  DstBlock		  "11th\n150 Mvar\nQ=100 "
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar2"
+	  SrcPort		  1
+	  DstBlock		  "Ground2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar3"
+	  SrcPort		  1
+	  DstBlock		  "Ground1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar4"
+	  SrcPort		  1
+	  DstBlock		  "Ground"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "\n23-25 th\n150 Mvar"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Q=3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "\n23-25 th\n150 Mvar"
+	  SrcPort		  2
+	  Points		  [0, 0]
+	  DstBlock		  "Q=3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "\n23-25 th\n150 Mvar"
+	  SrcPort		  3
+	  Points		  [0, 0]
+	  DstBlock		  "Q=3"
+	  DstPort		  3
+	}
+	Annotation {
+	  Name			  "50 Hz filters  4*150 Mvars @ 345 kV"
+	  Position		  [270, 457]
+	}
+	Annotation {
+	  Name			  "Capacitor banks"
+	  Position		  [84, 416]
+	}
+	Annotation {
+	  Name			  "Tuned filters"
+	  Position		  [290, 422]
+	}
+	Annotation {
+	  Name			  "High-pass\ndamped filter"
+	  Position		  [501, 423]
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Filters 60Hz"
+      Ports		      [3]
+      Position		      [95, 260, 170, 310]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      TreatAsAtomicUnit	      off
+      MaskDisplay	      "disp('AC filters \\n60 Hz\\n600 Mvar')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Filters 60Hz"
+	Location		[47, 298, 705, 784]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "A"
+	  Position		  [95, 25, 125, 40]
+	  Orientation		  "down"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "B"
+	  Position		  [265, 25, 295, 40]
+	  Orientation		  "down"
+	  Port			  "2"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "C"
+	  Position		  [460, 30, 490, 45]
+	  Orientation		  "down"
+	  Port			  "3"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "\n23-25 th\n150 Mvar"
+	  Ports			  [3, 3]
+	  Position		  [485, 185, 525, 235]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nSeries RLC Bran"
+"ch "
+	  SourceType		  "3-phase RLC series element"
+	  R			  "0"
+	  L			  "0"
+	  C			  "1.592e-6"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "11th\n150 Mvar\nQ=100 "
+	  Ports			  [3, 3]
+	  Position		  [195, 220, 245, 300]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nSeries RLC Bran"
+"ch "
+	  SourceType		  "3-phase RLC series element"
+	  R			  "1.515"
+	  L			  "36.53e-3"
+	  C			  "1.592e-6"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "13th\n150 Mvar\nQ=100"
+	  Ports			  [3, 3]
+	  Position		  [325, 220, 375, 300]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nSeries RLC Bran"
+"ch "
+	  SourceType		  "3-phase RLC series element"
+	  R			  "1.282"
+	  L			  "26.15e-3"
+	  C			  "1.592e-6"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar1"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [3, 1]
+	  Position		  [54, 340, 106, 345]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "3"
+	  sorties		  "1"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar2"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [3, 1]
+	  Position		  [194, 340, 246, 345]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "3"
+	  sorties		  "1"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar3"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [3, 1]
+	  Position		  [324, 340, 376, 345]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "3"
+	  sorties		  "1"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar4"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [3, 1]
+	  Position		  [479, 340, 531, 345]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "3"
+	  sorties		  "1"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar7"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1, 4]
+	  Position		  [51, 85, 169, 90]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "1"
+	  sorties		  "4"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar8"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1, 4]
+	  Position		  [221, 90, 339, 95]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "1"
+	  sorties		  "4"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bus Bar9"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1, 4]
+	  Position		  [416, 90, 534, 95]
+	  Orientation		  "down"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Bus Bar (horiz)"
+	  SourceType		  "Bus Bar"
+	  entrees		  "1"
+	  sorties		  "4"
+	  PSBOutputType		  "1111111111111111111111111111111111111111111"
+"111111111111111111111111111111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "C\n150 Mvar"
+	  Ports			  [3, 3]
+	  Position		  [55, 220, 105, 300]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nSeries RLC Bran"
+"ch "
+	  SourceType		  "3-phase RLC series element"
+	  R			  "0"
+	  L			  "0"
+	  C			  "1.592e-6"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Ground"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1]
+	  Position		  [490, 375, 520, 405]
+	  Orientation		  "down"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Ground (input)"
+	  SourceType		  "Ground"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Ground1"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1]
+	  Position		  [335, 380, 365, 410]
+	  Orientation		  "down"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Ground (input)"
+	  SourceType		  "Ground"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Ground2"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1]
+	  Position		  [205, 375, 235, 405]
+	  Orientation		  "down"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Ground (input)"
+	  SourceType		  "Ground"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Ground3"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1]
+	  Position		  [65, 370, 95, 400]
+	  Orientation		  "down"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/Ground (input)"
+	  SourceType		  "Ground"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Q=3"
+	  Ports			  [3, 3]
+	  Position		  [480, 250, 530, 300]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "powerlib2/Elements/3-Phase\nParallel RLC Br"
+"anch"
+	  SourceType		  "3-phase parallel RLC element "
+	  R			  "208.3"
+	  L			  "7.673e-3"
+	  C			  "0"
+	}
+	Line {
+	  SrcBlock		  "\n23-25 th\n150 Mvar"
+	  SrcPort		  3
+	  Points		  [0, 0]
+	  DstBlock		  "Q=3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "\n23-25 th\n150 Mvar"
+	  SrcPort		  2
+	  Points		  [0, 0]
+	  DstBlock		  "Q=3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "\n23-25 th\n150 Mvar"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Q=3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar4"
+	  SrcPort		  1
+	  DstBlock		  "Ground"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar3"
+	  SrcPort		  1
+	  DstBlock		  "Ground1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar2"
+	  SrcPort		  1
+	  DstBlock		  "Ground2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar9"
+	  SrcPort		  2
+	  Points		  [0, 35; -225, 0]
+	  DstBlock		  "11th\n150 Mvar\nQ=100 "
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar7"
+	  SrcPort		  2
+	  Points		  [0, 80; 110, 0]
+	  DstBlock		  "11th\n150 Mvar\nQ=100 "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar8"
+	  SrcPort		  2
+	  Points		  [0, 45; -45, 0]
+	  DstBlock		  "11th\n150 Mvar\nQ=100 "
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "11th\n150 Mvar\nQ=100 "
+	  SrcPort		  3
+	  DstBlock		  "Bus Bar2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "11th\n150 Mvar\nQ=100 "
+	  SrcPort		  2
+	  DstBlock		  "Bus Bar2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "11th\n150 Mvar\nQ=100 "
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar1"
+	  SrcPort		  1
+	  DstBlock		  "Ground3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "C\n150 Mvar"
+	  SrcPort		  3
+	  DstBlock		  "Bus Bar1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "C\n150 Mvar"
+	  SrcPort		  2
+	  DstBlock		  "Bus Bar1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "C\n150 Mvar"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar9"
+	  SrcPort		  4
+	  DstBlock		  "\n23-25 th\n150 Mvar"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar9"
+	  SrcPort		  3
+	  Points		  [0, 25; -125, 0]
+	  DstBlock		  "13th\n150 Mvar\nQ=100"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar9"
+	  SrcPort		  1
+	  Points		  [0, 15; -335, 0]
+	  DstBlock		  "C\n150 Mvar"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bus Bar7"
+	  SrcPort		  4
+	  Points		  [0, 70; 335, 0]
+	  DstBlock		  "\n23-25 th\n150 Mvar"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar7"
+	  SrcPort		  3
+	  Points		  [0, 70; 210, 0]
+	  DstBlock		  "13th\n150 Mvar\nQ=100"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus Bar8"
+	  SrcPort		  4
+	  Points		  [0, 45; 180, 0]
+	  DstBlock		  "\n23-25 th\n150 Mvar"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bus Bar8"
+	  SrcPort		  3
+	  Points		  [0, 50; 55, 0]
+	  DstBlock		  "13th\n150 Mvar\nQ=100"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bus Bar8"
+	  SrcPort		  1
+	  Points		  [0, 25; -155, 0]
+	  DstBlock		  "C\n150 Mvar"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bus Bar7"
+	  SrcPort		  1
+	  DstBlock		  "C\n150 Mvar"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Q=3"
+	  SrcPort		  3
+	  DstBlock		  "Bus Bar4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Q=3"
+	  SrcPort		  2
+	  DstBlock		  "Bus Bar4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Q=3"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "13th\n150 Mvar\nQ=100"
+	  SrcPort		  3
+	  DstBlock		  "Bus Bar3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "13th\n150 Mvar\nQ=100"
+	  SrcPort		  2
+	  DstBlock		  "Bus Bar3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "13th\n150 Mvar\nQ=100"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "C"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "B"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "A"
+	  SrcPort		  1
+	  DstBlock		  "Bus Bar7"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "60 Hz filters  4*150 Mvars @ 500  kV"
+	  Position		  [285, 452]
+	}
+	Annotation {
+	  Name			  "High-pass\ndamped filter"
+	  Position		  [501, 423]
+	}
+	Annotation {
+	  Name			  "Tuned filters"
+	  Position		  [290, 422]
+	}
+	Annotation {
+	  Name			  "Capacitor banks"
+	  Position		  [84, 416]
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Forced delay"
+      Ports		      [0, 1]
+      Position		      [270, 475, 300, 505]
+      ForegroundColor	      "blue"
+      SourceBlock	      "powerlib_extras/Control \nBlocks/Timer"
+      SourceType	      "Timer"
+      t			      "[0.65 0.7]*100"
+      e			      "[ 1 0 ]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground2"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [1]
+      Position		      [370, 75, 400, 105]
+      Orientation	      "down"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Connectors/Ground (input)"
+      SourceType	      "Ground"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground3"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [1]
+      Position		      [705, 80, 735, 110]
+      Orientation	      "down"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Connectors/Ground (input)"
+      SourceType	      "Ground"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground4"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [1]
+      Position		      [390, 240, 420, 270]
+      Orientation	      "down"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Connectors/Ground (input)"
+      SourceType	      "Ground"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground5"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [1]
+      Position		      [720, 235, 750, 265]
+      Orientation	      "down"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Connectors/Ground (input)"
+      SourceType	      "Ground"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "INVERTER"
+      Ports		      [3]
+      Position		      [1005, 354, 1045, 406]
+      BackgroundColor	      "lightBlue"
+      Location		      [448, 260, 1019, 762]
+      Open		      off
+      NumInputPorts	      "3"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+	axes2			""
+	axes3			""
+      }
+      TimeRange		      "1               "
+      YMin		      "0.955~1~142.11"
+      YMax		      "0.99~1.03~142.17"
+      DataFormat	      "Array"
+      LimitDataPoints	      off
+      SampleInput	      on
+      SampleTime	      "Ts"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "I_DCfault"
+      Ports		      [1]
+      Position		      [785, 26, 820, 74]
+      BackgroundColor	      "lightBlue"
+      Location		      [554, 477, 1019, 729]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      TimeRange		      "1"
+      YMin		      "-1"
+      YMax		      "1"
+      DataFormat	      "Array"
+      LimitDataPoints	      off
+      Decimation	      "Ts"
+      SampleInput	      on
+      SampleTime	      "Ts"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "IfDC"
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [1, 2]
+      Position		      [685, 43, 710, 67]
+      SourceBlock	      "powerlib2/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBOutputType	      "01"
+      PSBequivalent	      "0"
+      Port {
+	PortNumber		1
+	Name			"Ifault DC"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Inverter"
+      Ports		      [8, 2]
+      Position		      [790, 125, 855, 240]
+      Orientation	      "left"
+      TreatAsAtomicUnit	      off
+      MaskDisplay	      "plot(0,0,100,100,[30 70 50 30 ], [60 60 40 60],"
+" [50 50], [25 40], [50 50], [ 60 75], [30 70], [40 40], [50 60 70], [40 30 30"
+"]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Inverter"
+	Location		[513, 142, 986, 544]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ay"
+	  Position		  [125, 58, 155, 72]
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "By"
+	  Position		  [160, 83, 190, 97]
+	  Port			  "2"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Cy"
+	  Position		  [125, 108, 155, 122]
+	  Port			  "3"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ad"
+	  Position		  [120, 198, 150, 212]
+	  Port			  "4"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Bd"
+	  Position		  [165, 223, 195, 237]
+	  Port			  "5"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Cd"
+	  Position		  [120, 248, 150, 262]
+	  Port			  "6"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Py"
+	  Position		  [25, 133, 55, 147]
+	  Port			  "7"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Pd"
+	  Position		  [30, 273, 60, 287]
+	  Port			  "8"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Subsystem13"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1, 0, 1]
+	  Position		  [355, 260, 375, 280]
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/L connector"
+	  SourceType		  "Bus Bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Universal Bridge"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [4, 2]
+	  Position		  [245, 54, 305, 151]
+	  SourceBlock		  "powerlib2/Power\nElectronics/Universal Brid"
+"ge"
+	  SourceType		  "Universal Bridge"
+	  arms			  "3"
+	  confi			  "ABC as input terminals"
+	  injcc			  "2000"
+	  cf			  "0.1e-6"
+	  device		  "Thyristors"
+	  Ron			  "1e-3"
+	  Lon			  "0"
+	  VFs			  "[  0.8  0.8  ]"
+	  Vf			  "0"
+	  gtoparameters		  "[ 10e-6 , 20e-6 ]"
+	  igbtparameters	  "[ 1e-6 , 2e-6 ]"
+	  mesure		  "None"
+	  PSBOutputType		  "111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Universal Bridge1"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [4, 2]
+	  Position		  [245, 194, 305, 291]
+	  SourceBlock		  "powerlib2/Power\nElectronics/Universal Brid"
+"ge"
+	  SourceType		  "Universal Bridge"
+	  arms			  "3"
+	  confi			  "ABC as input terminals"
+	  injcc			  "2000"
+	  cf			  "0.1e-6"
+	  device		  "Thyristors"
+	  Ron			  "1e-3"
+	  Lon			  "0"
+	  VFs			  "[  0.8  0.8  ]"
+	  Vf			  "0"
+	  gtoparameters		  "[ 10e-6 , 20e-6 ]"
+	  igbtparameters	  "[ 1e-6 , 2e-6 ]"
+	  mesure		  "None"
+	  PSBOutputType		  "111"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pos"
+	  Position		  [410, 123, 440, 137]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "neg"
+	  Position		  [410, 213, 440, 227]
+	  Port			  "2"
+	}
+	Line {
+	  SrcBlock		  "Pd"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Py"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Cd"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bd"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Ad"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Cy"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "By"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Ay"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Universal Bridge"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  DstBlock		  "Subsystem13"
+	  DstPort		  enable
+	}
+	Line {
+	  SrcBlock		  "Universal Bridge1"
+	  SrcPort		  2
+	  DstBlock		  "Subsystem13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Universal Bridge"
+	  SrcPort		  2
+	  DstBlock		  "pos"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Universal Bridge1"
+	  SrcPort		  1
+	  DstBlock		  "neg"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Inverter Control"
+      Ports		      [7, 5]
+      Position		      [775, 330, 860, 500]
+      Orientation	      "left"
+      ForegroundColor	      "blue"
+      SourceBlock	      "powerlib_extras/Discrete \nControl Blocks/Discr"
+"ete 12-Pulse\nHVDC Control "
+      SourceType	      "Discrete 12-pulse HVDC Control"
+      Mode		      "Inverter"
+      f0Pw		      "[50 101.5]"
+      XPILimR		      "[165, 5]"
+      XLinR		      "[60, 20]"
+      XPILimI		      "[165, 92]"
+      XLinI		      "[160,  120]"
+      Xmarg		      "[0.1,  0.05]"
+      XKPI_I		      "[45, 4500, 90]"
+      XKPI_V		      "[35, 2250,  90]"
+      T1_I		      "0.3e-3"
+      XT_V		      "[10e-3 , 0.1e-3]"
+      BP		      "25"
+      Xvdcol		      "[0.6, 0.18, 0.30, 0.1, 0.080]"
+      alpha_const	      off
+      alpha_fix		      "165"
+      pas		      "Ts"
+      Port {
+	PortNumber		3
+	Name			"alphaI (deg)"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Meas.Inv"
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [3, 5]
+      Position		      [1010, 130, 1040, 210]
+      Orientation	      "left"
+      SourceBlock	      "powerlib2/Measurements/Three-Phase\nV-I Measure"
+"ment"
+      SourceType	      "3-Phase VI Measurement"
+      VChoice		      "phase-to-ground"
+      ualv		      off
+      labelV		      "V1"
+      Vpu		      on
+      Vbase		      "345e3"
+      IChoice		      "yes"
+      ualc		      off
+      labelC		      "I1"
+      Ppu		      on
+      Pbase		      "100e6"
+      OutputType	      "Complex"
+      PhasorSimulation	      off
+      PSBequivalent	      "0"
+      PSBOutputType	      "11100"
+      Port {
+	PortNumber		4
+	Name			"Vabc"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+      Port {
+	PortNumber		5
+	Name			"Iabc"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Meas.Rect"
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [3, 5]
+      Position		      [90, 133, 120, 217]
+      SourceBlock	      "powerlib2/Measurements/Three-Phase\nV-I Measure"
+"ment"
+      SourceType	      "3-Phase VI Measurement"
+      VChoice		      "phase-to-ground"
+      ualv		      off
+      labelV		      "V1"
+      Vpu		      on
+      Vbase		      "500e3"
+      IChoice		      "yes"
+      ualc		      off
+      labelC		      "I1"
+      Ppu		      on
+      Pbase		      "100e6"
+      OutputType	      "Complex"
+      PhasorSimulation	      off
+      PSBequivalent	      "0"
+      PSBOutputType	      "11100"
+      Port {
+	PortNumber		4
+	Name			"Vabc"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+      Port {
+	PortNumber		5
+	Name			"Iabc"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "More Info1"
+      Ports		      []
+      Position		      [890, 645, 917, 670]
+      DropShadow	      on
+      ShowName		      off
+      TreatAsAtomicUnit	      off
+      MaskDisplay	      "disp('?')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"More Info1"
+	Location		[66, 149, 908, 761]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Annotation {
+	  Name			  "Notice the 120 Hz oscillations in the DC vo"
+"ltage and currents during the fault. When the fault is cleared at t=0.7 s,\nt"
+"he VDCOL operates and reduces the reference current to 0.3 pu. The system rec"
+"overs in approximately 0.4 s after fault clearing."
+	  Position		  [329, 837]
+	}
+	Annotation {
+	  Name			  "In the DC Fault Timer and Forced Delay Time"
+"r blocks, change the multiplication factor of 1 in the Transition Times to 10"
+"0,\nso that the DC fault is now eliminated.  In the AC Fault timer, change th"
+"e multiplication factor in the Transition Times to 1,\nso that a 6 cycles lin"
+"e-to-ground fault is now applied at the rectifier. Restart the simulation. "
+	  Position		  [344, 787]
+	}
+	Annotation {
+	  Name			  "AC line-to-ground fault"
+	  Position		  [104, 752]
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "Disconnect the Step Up & Down block in orde"
+"r to eliminate the step disturbance applied on the reference current.\nIn the"
+" DC Fault Timer and Forced Delay Timer blocks, change the multiplication fact"
+"or of 100 in the Transition Times to 1,\nso that a fault is now applied at t="
+"0.6s. Open the I_DCfault scope to observe the fault current. Restart the simu"
+"lation.  "
+	  Position		  [319, 622]
+	}
+	Annotation {
+	  Name			  "At fault application the DC current quickly"
+" increases to 2.3 pu and the DC voltage falls to zero at the rectifier. \nThi"
+"s DC voltages drop is seen by the Voltage Dependant Currrent Order Limiter (V"
+"DCOL) which reduces the reference current to 0.3 pu at the rectifier.\nA DC c"
+"urrent still continues to circulate in the fault. Then, a t=0.65 s, the recti"
+"fier alpha firing angle is forced to 165 degrees by the protection systems (n"
+"ot simulated).\nThe rectifier now operates in inverter mode. The DC line volt"
+"age becomes negative and the energy stored in the line is returned to the AC "
+"network, \ncausing rapid extinction of the fault current at its next zero-cro"
+"ssing. Then, alpha is released at t=0.7 s and the normal DC voltage and curre"
+"nt\n recover in approcxximately 0.3 s. \n "
+	  Position		  [419, 697]
+	}
+	Annotation {
+	  Name			  "DC line fault"
+	  Position		  [74, 587]
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "Start-up"
+	  Position		  [44, 407]
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "DEMONSTRATION"
+	  Position		  [74, 307]
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "A 1000 MW (500 kV, 2kA) DC linterconnexion "
+"is used to transmit power from a 500 kV, 5000 MVA,60Hz network. \nto a  345 k"
+"V, 10 000MVA, 50Hz network.\n\nThe rectifier and the inverter  are 12-pulse c"
+"onverters using  two 6-pulse Universal briges connected in series. \nOpen the"
+" two converter subsystems to see how they are built. The converters are inter"
+"connected through a 300 km distributed parameter \nline through and 0.5 H smo"
+"othing reactors. The converter transformers are modelled with Universal Trans"
+"former blocks. \nThe transformer tap changers are kept at a fixed tap. Open t"
+"he two transformer blocks to see the factors applied \non the primary voltage"
+" (0.90 on rectifier side; 0.96 on inverter side). The reactive power required"
+" by the converters is provided \nby a set of filters (C bank plus 11th, 13th "
+"and  high pass filters; total 600 Mvar on each side).\nOpen the AC filter sub"
+"systems to see the filter toplogy.  Two circuit breakers are used to apply fa"
+"ults on the rectifier AC and DC sides.\n\nThe rectifier and inverter control "
+"systems use the  Discrete 12-pulse HVDC Control block of the Extras/Control l"
+"ibrary.\n The power system and the control system are both  discretized (Samp"
+"le time= Ts).\nA description of the control systems is provided in the HVDC T"
+"ransmission System Case Study of the User's Manual."
+	  Position		  [339, 197]
+	}
+	Annotation {
+	  Name			  "This demonstration  illustrates steady-stat"
+"e and transient performance\nof a 12-pulse,  1000 MW (500 kV-2kA) 50/60 Hz HV"
+"DC transmission system"
+	  Position		  [379, 27]
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "CIRCUIT  DESCRIPTION"
+	  Position		  [89, 87]
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "Notice that the system is discretized, usin"
+"g sample time Ts; Specify Ts=50e-6 in your Matlab window.\nThe system is prog"
+"rammed to start and  reach a steady state. \nThen, a step is applied on the r"
+"eference current to observe the dynamic response of the regulators.\nStart th"
+"e simulation and observe the following events on the RECTIFIER and  INVERTER "
+"scopes"
+	  Position		  [259, 352]
+	}
+	Annotation {
+	  Name			  "The reference current is ramped from zero t"
+"o 1 pu (2kA) in 0.4 s. The DC current and voltages start from zero and reach "
+"steady-state\n in approximately 0.5 s.The rectifier controls the current and "
+"the inverter controls the voltage.Trace 1 of both RECTIFIER and INVERTER scop"
+"es\n shows the DC line voltage (1pu=500 kV). Trace 2 shows the the reference "
+"current and the measured Id current (1pu=2kA).\nIn steady-state, the alpha fi"
+"ring angles (trace 3) are 18 degres and 142 degrees respectively on the recti"
+"fier and inverter side.  "
+	  Position		  [364, 452]
+	}
+	Annotation {
+	  Name			  "At t=0.6 s, a 0.2 pu step is applied on the"
+" reference current (decrease from 1 pu  to 0.8 pu ).\nAt t=0.75s,another step"
+" is applied to set the reference back to 1 pu. \nObserve the response of the "
+"current regulator . It stabilizes in  approximately 0.05 s "
+	  Position		  [254, 542]
+	}
+	Annotation {
+	  Name			  "Step reponse of regulators"
+	  Position		  [114, 502]
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  " S. Casoria ; Hydro-Quebec (IREQ)"
+	  Position		  [370, 54]
+	}
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1]
+      Position		      [925, 381, 930, 419]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"Id & Idref (pu)"
+	PropagatedSignals	"Id (pu), "
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux2"
+      Ports		      [2, 1]
+      Position		      [255, 371, 260, 404]
+      Orientation	      "left"
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"Id & Idref (pu)"
+	PropagatedSignals	"Id (pu), "
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "RECTIFIER"
+      Ports		      [3]
+      Position		      [135, 359, 175, 421]
+      Orientation	      "left"
+      BackgroundColor	      "lightBlue"
+      Location		      [48, 111, 603, 613]
+      Open		      off
+      NumInputPorts	      "3"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+	axes2			""
+	axes3			""
+      }
+      TimeRange		      "1"
+      YMin		      "-0.075~-0.02~89.9"
+      YMax		      "0.175~0.06~91.2"
+      DataFormat	      "Array"
+      LimitDataPoints	      off
+      Decimation	      "Ts"
+      SampleInput	      on
+      SampleTime	      "Ts"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Rectifier"
+      Ports		      [8, 2]
+      Position		      [325, 125, 390, 240]
+      TreatAsAtomicUnit	      off
+      MaskDisplay	      "plot(0,0,100,100,[30 70 50 30 ], [40 40 60 40],"
+" [50 50], [25 40], [50 50], [ 60 75], [30 70], [60 60], [50 40 30], [60 70 70"
+"]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Rectifier"
+	Location		[515, 140, 988, 542]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ay"
+	  Position		  [125, 58, 155, 72]
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "By"
+	  Position		  [160, 83, 190, 97]
+	  Port			  "2"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Cy"
+	  Position		  [125, 108, 155, 122]
+	  Port			  "3"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ad"
+	  Position		  [120, 198, 150, 212]
+	  Port			  "4"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Bd"
+	  Position		  [165, 223, 195, 237]
+	  Port			  "5"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Cd"
+	  Position		  [120, 248, 150, 262]
+	  Port			  "6"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Py"
+	  Position		  [25, 133, 55, 147]
+	  Port			  "7"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Pd"
+	  Position		  [30, 273, 60, 287]
+	  Port			  "8"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Subsystem13"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [1, 0, 1]
+	  Position		  [335, 120, 355, 140]
+	  Orientation		  "up"
+	  ShowName		  off
+	  SourceBlock		  "powerlib2/Connectors/L connector"
+	  SourceType		  "Bus Bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Universal Bridge"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [4, 2]
+	  Position		  [240, 54, 300, 151]
+	  SourceBlock		  "powerlib2/Power\nElectronics/Universal Brid"
+"ge"
+	  SourceType		  "Universal Bridge"
+	  arms			  "3"
+	  confi			  "ABC as input terminals"
+	  injcc			  "2000"
+	  cf			  "0.1e-6"
+	  device		  "Thyristors"
+	  Ron			  "1e-3"
+	  Lon			  "0"
+	  VFs			  "[  0.8  0.8  ]"
+	  Vf			  "0"
+	  gtoparameters		  "[ 10e-6 , 20e-6 ]"
+	  igbtparameters	  "[ 1e-6 , 2e-6 ]"
+	  mesure		  "All voltages and currents"
+	  PSBOutputType		  "111"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Universal Bridge1"
+	  Tag			  "PoWeRsYsTeMbLoCk"
+	  Ports			  [4, 2]
+	  Position		  [240, 194, 300, 291]
+	  SourceBlock		  "powerlib2/Power\nElectronics/Universal Brid"
+"ge"
+	  SourceType		  "Universal Bridge"
+	  arms			  "3"
+	  confi			  "ABC as input terminals"
+	  injcc			  "2000"
+	  cf			  "0.1e-6"
+	  device		  "Thyristors"
+	  Ron			  "1e-3"
+	  Lon			  "0"
+	  VFs			  "[  0.8  0.8  ]"
+	  Vf			  "0"
+	  gtoparameters		  "[ 10e-6 , 20e-6 ]"
+	  igbtparameters	  "[ 1e-6 , 2e-6 ]"
+	  mesure		  "None"
+	  PSBOutputType		  "111"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pos"
+	  Position		  [410, 73, 440, 87]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "neg"
+	  Position		  [415, 263, 445, 277]
+	  Port			  "2"
+	}
+	Line {
+	  SrcBlock		  "Universal Bridge"
+	  SrcPort		  2
+	  DstBlock		  "Subsystem13"
+	  DstPort		  enable
+	}
+	Line {
+	  SrcBlock		  "Ay"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Universal Bridge"
+	  SrcPort		  1
+	  DstBlock		  "pos"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "By"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Cy"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Ad"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bd"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Cd"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Universal Bridge1"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  DstBlock		  "Subsystem13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Universal Bridge1"
+	  SrcPort		  2
+	  DstBlock		  "neg"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Py"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Pd"
+	  SrcPort		  1
+	  DstBlock		  "Universal Bridge1"
+	  DstPort		  4
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Rectifier Control"
+      Ports		      [7, 5]
+      Position		      [350, 332, 430, 498]
+      ForegroundColor	      "blue"
+      SourceBlock	      "powerlib_extras/Discrete \nControl Blocks/Discr"
+"ete 12-Pulse\nHVDC Control "
+      SourceType	      "Discrete 12-pulse HVDC Control"
+      Mode		      "Rectifier"
+      f0Pw		      "[60 101.5]"
+      XPILimR		      "[165, 5]"
+      XLinR		      "[60, 20]"
+      XPILimI		      "[165, 92]"
+      XLinI		      "[160,  120]"
+      Xmarg		      "[0.1,  0.05]"
+      XKPI_I		      "[45, 4500, 90]"
+      XKPI_V		      "[35, 2250, 90]"
+      T1_I		      "0.3e-3"
+      XT_V		      "[10e-3 , 0.1e-3]"
+      BP		      "30"
+      Xvdcol		      "[0.6, 0.18, 0.30, 0.1, 0.080]"
+      alpha_const	      off
+      alpha_fix		      "165"
+      pas		      "Ts"
+      Port {
+	PortNumber		3
+	Name			"alphaR (deg)"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "S1"
+      Ports		      [0, 1]
+      Position		      [105, 569, 155, 601]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      TreatAsAtomicUnit	      off
+      MaskType		      "RAMPING UNIT"
+      MaskPromptString	      "Final Up Value (pu):|Up Slope (pu/s):|Start Up "
+"Time (s):|Final Down Value (pu):|Down Slope (pu/s):|Start Down Time (s):"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "|||||"
+      MaskEnableString	      "on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,"
+      MaskVariables	      "F_up=@1;up_slope=@2;T_up=@3;F_down=@4;down_slop"
+"e=@5;T_down=@6;"
+      MaskInitialization      "T_up_final      =  T_up + F_up/up_slope;\nT_dow"
+"n_final =   T_down + (F_down-F_up)/down_slope;\nT_ramp  = [0, T_up, T_up_fina"
+"l,  T_down,  T_down_final, 9999]';\nU_ramp = [0, 0 , F_up,  F_up,  F_down,  F"
+"_down]';"
+      MaskDisplay	      "disp('Ramping\\n Unit')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1.0|1.0/0.4|0.02|0.|-1|100"
+      System {
+	Name			"S1"
+	Location		[619, 438, 880, 666]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  FromWorkspace
+	  Name			  "From \nWorkspace"
+	  Position		  [30, 25, 120, 55]
+	  VariableName		  "[T_ramp,  U_ramp]"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [165, 33, 195, 47]
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "From \nWorkspace"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Silvano Casoria\nLaboratoire simulation de "
+"réseaux, IREQ"
+	  Position		  [129, 192]
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Subsystem"
+      Ports		      [0, 1]
+      Position		      [105, 607, 155, 643]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      TreatAsAtomicUnit	      off
+      MaskDisplay	      "disp('Step Up\\n & Down')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Subsystem"
+	Location		[589, 647, 834, 784]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Step
+	  Name			  "Step1"
+	  Position		  [25, 25, 55, 55]
+	  Time			  "0.6"
+	  After			  "0.2"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Step
+	  Name			  "Step2"
+	  Position		  [25, 80, 55, 110]
+	  Time			  "0.75"
+	  After			  "0.2"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [115, 35, 135, 55]
+	  ShowName		  off
+	  Inputs		  "-+"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [160, 38, 190, 52]
+	}
+	Line {
+	  SrcBlock		  "Step1"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Step2"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Subsystem8"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [1, 0, 1]
+      Position		      [755, 145, 775, 165]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Connectors/L connector"
+      SourceType	      "Bus Bar"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      Ports		      [2, 1]
+      Position		      [260, 565, 280, 585]
+      ForegroundColor	      "blue"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "V>pu"
+      Position		      [520, 310, 550, 340]
+      Orientation	      "left"
+      ForegroundColor	      "blue"
+      Gain		      "1/500e3"
+      Port {
+	PortNumber		1
+	Name			"VdL (pu)"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "V>pu1"
+      Position		      [625, 310, 655, 340]
+      ForegroundColor	      "blue"
+      Gain		      "1/500e3"
+      Port {
+	PortNumber		1
+	Name			"VdL (pu)"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "V_I Rect"
+      Ports		      [2]
+      Position		      [235, 253, 270, 302]
+      BackgroundColor	      "lightBlue"
+      Location		      [7, 83, 562, 473]
+      Open		      off
+      NumInputPorts	      "2"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+	axes2			""
+      }
+      TimeRange		      "1"
+      YMin		      "-1~-0.75"
+      YMax		      "1~0.75"
+      DataFormat	      "Array"
+      LimitDataPoints	      off
+      Decimation	      "Ts"
+      SampleInput	      on
+      SampleTime	      "Ts"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VdLI"
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [2, 1]
+      Position		      [615, 188, 640, 212]
+      Orientation	      "left"
+      SourceBlock	      "powerlib2/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBOutputType	      "0"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VdLR"
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [2, 1]
+      Position		      [540, 188, 565, 212]
+      SourceBlock	      "powerlib2/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBOutputType	      "0"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Vref"
+      Position		      [265, 429, 295, 451]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      Value		      "2"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Vref1"
+      Position		      [870, 430, 900, 450]
+      Orientation	      "left"
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Vref2"
+      Position		      [870, 480, 900, 500]
+      Orientation	      "left"
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "ZDC"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [2]
+      Position		      [615, 108, 645, 137]
+      SourceBlock	      "powerlib2/Measurements/Impedance Measurement"
+      SourceType	      "Impedance Measurement"
+      kz		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Zinv"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [2]
+      Position		      [1020, 19, 1060, 61]
+      SourceBlock	      "powerlib2/Measurements/Impedance Measurement"
+      SourceType	      "Impedance Measurement"
+      kz		      "0.5"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Zrec"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [2]
+      Position		      [155, 69, 200, 111]
+      SourceBlock	      "powerlib2/Measurements/Impedance Measurement"
+      SourceType	      "Impedance Measurement"
+      kz		      "0.5"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "idI"
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [1, 2]
+      Position		      [710, 148, 735, 172]
+      SourceBlock	      "powerlib2/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBOutputType	      "01"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "idR"
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [1, 2]
+      Position		      [425, 143, 450, 167]
+      SourceBlock	      "powerlib2/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBOutputType	      "01"
+      PSBequivalent	      "1"
+      Port {
+	PortNumber		1
+	Name			"IdR"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "output Ground2"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [0, 1]
+      Position		      [39, 495, 71, 525]
+      Orientation	      "up"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Connectors/Ground (output)"
+      SourceType	      "Ground"
+      PSBOutputType	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "output Ground4"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [0, 1]
+      Position		      [1069, 510, 1101, 540]
+      Orientation	      "up"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Connectors/Ground (output)"
+      SourceType	      "Ground"
+      PSBOutputType	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "output Ground5"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [0, 1]
+      Position		      [509, 235, 541, 265]
+      Orientation	      "up"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Connectors/Ground (output)"
+      SourceType	      "Ground"
+      PSBOutputType	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "output Ground6"
+      Tag		      "PoWeRsYsTeMbLoCk"
+      Ports		      [0, 1]
+      Position		      [639, 240, 671, 270]
+      Orientation	      "up"
+      ShowName		      off
+      SourceBlock	      "powerlib2/Connectors/Ground (output)"
+      SourceType	      "Ground"
+      PSBOutputType	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "powergui"
+      Ports		      []
+      Position		      [535, 432, 627, 479]
+      DropShadow	      on
+      ShowName		      off
+      SourceBlock	      "powerlib2/powergui"
+      SourceType	      "PSB option menu block"
+      Frange		      "[10:2:1500]"
+      Ylog		      off
+      Xlog		      off
+      save		      on
+      variable		      "Zcase5"
+      ZoomFFT		      on
+      StartTime		      "0.0"
+      cycles		      "1"
+      DisplayStyle	      "off"
+      fundamental	      "60"
+      FreqAxis		      off
+      MaxFrequency	      "1000"
+      frequencyindice	      "1"
+      frequencyindicesteady   "1"
+      RmsSteady		      "1"
+      display		      off
+      Ts		      "50e-6"
+      methode		      off
+      frequency		      "60"
+      echomessages	      off
+    }
+    Line {
+      SrcBlock		      "Meas.Rect"
+      SrcPort		      2
+      Points		      [10, 0]
+      Branch {
+	Points			[85, 0]
+	DstBlock		"1200 MVA"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -60]
+	DstBlock		"Zrec"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Meas.Rect"
+      SrcPort		      3
+      Points		      [95, 0]
+      DstBlock		      "1200 MVA"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "idR"
+      SrcPort		      2
+      DstBlock		      "0.5 H "
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "idI"
+      SrcPort		      2
+      Points		      [0, 15]
+      DstBlock		      "Subsystem8"
+      DstPort		      enable
+    }
+    Line {
+      SrcBlock		      "1200 MVA"
+      SrcPort		      4
+      DstBlock		      "Rectifier"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "1200 MVA"
+      SrcPort		      6
+      DstBlock		      "Rectifier"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "1200 MVA"
+      SrcPort		      5
+      DstBlock		      "Rectifier"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "0.5 H"
+      SrcPort		      1
+      DstBlock		      "idI"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "1200 MVA"
+      SrcPort		      1
+      DstBlock		      "Rectifier"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "1200 MVA"
+      SrcPort		      2
+      DstBlock		      "Rectifier"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "1200 MVA"
+      SrcPort		      3
+      DstBlock		      "Rectifier"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "DC fault"
+      SrcPort		      1
+      DstBlock		      "IfDC"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "IfDC"
+      SrcPort		      2
+      Points		      [5, 0]
+      DstBlock		      "Ground3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Meas.Rect"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	Points			[85, 0]
+	Branch {
+	  DstBlock		  "1200 MVA"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -100]
+	  DstBlock		  "A-G Fault"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[0, -65]
+	DstBlock		"Zrec"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Iabc"
+      Labels		      [0, 0]
+      SrcBlock		      "Meas.Rect"
+      SrcPort		      5
+      Points		      [80, 0; 0, 85]
+      DstBlock		      "V_I Rect"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "output Ground2"
+      SrcPort		      1
+      DstBlock		      " 60 Hz\n 500kV"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ifault DC"
+      Labels		      [-1, 0]
+      SrcBlock		      "IfDC"
+      SrcPort		      1
+      DstBlock		      "I_DCfault"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "A-G Fault"
+      SrcPort		      1
+      Points		      [30, 0]
+      DstBlock		      "Ground2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Inverter"
+      SrcPort		      2
+      Points		      [-50, 0]
+      DstBlock		      "Ground5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Inverter"
+      SrcPort		      1
+      DstBlock		      "Subsystem8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "1200 MVA1"
+      SrcPort		      1
+      DstBlock		      "Inverter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "1200 MVA1"
+      SrcPort		      2
+      DstBlock		      "Inverter"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "1200 MVA1"
+      SrcPort		      3
+      DstBlock		      "Inverter"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "1200 MVA1"
+      SrcPort		      4
+      DstBlock		      "Inverter"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "1200 MVA1"
+      SrcPort		      5
+      DstBlock		      "Inverter"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "1200 MVA1"
+      SrcPort		      6
+      DstBlock		      "Inverter"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Meas.Inv"
+      SrcPort		      1
+      Points		      [-30, 0]
+      Branch {
+	DstBlock		"1200 MVA1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -110]
+	DstBlock		"Zinv"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Meas.Inv"
+      SrcPort		      2
+      Points		      [-15, 0]
+      Branch {
+	Points			[-25, 0]
+	DstBlock		"1200 MVA1"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -105]
+	DstBlock		"Zinv"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Meas.Inv"
+      SrcPort		      3
+      Points		      [-35, 0; 0, 30]
+      DstBlock		      "1200 MVA1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Vref"
+      SrcPort		      1
+      DstBlock		      "Rectifier Control"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Rectifier Control"
+      SrcPort		      1
+      Points		      [5, 0; 0, -75; -145, 0; 0, -50]
+      DstBlock		      "Rectifier"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Rectifier Control"
+      SrcPort		      2
+      Points		      [15, 0; 0, -115; -145, 0; 0, -30]
+      DstBlock		      "Rectifier"
+      DstPort		      8
+    }
+    Line {
+      Name		      "alphaR (deg)"
+      Labels		      [5, 0]
+      SrcBlock		      "Rectifier Control"
+      SrcPort		      3
+      Points		      [20, 0; 0, 115; -220, 0; 0, -120]
+      DstBlock		      "RECTIFIER"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Inverter Control"
+      SrcPort		      2
+      Points		      [-15, 0; 0, -75; 115, 0]
+      DstBlock		      "Inverter"
+      DstPort		      8
+    }
+    Line {
+      Name		      "Vabc"
+      Labels		      [0, 0]
+      SrcBlock		      "Meas.Inv"
+      SrcPort		      4
+      Points		      [-30, 0; 0, 155]
+      DstBlock		      "Inverter Control"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Inverter Control"
+      SrcPort		      1
+      Points		      [0, -35; 110, 0; 0, -90]
+      DstBlock		      "Inverter"
+      DstPort		      7
+    }
+    Line {
+      Name		      "alphaI (deg)"
+      Labels		      [4, 0]
+      SrcBlock		      "Inverter Control"
+      SrcPort		      3
+      Points		      [-30, 0; 0, 100; 250, 0]
+      DstBlock		      "INVERTER"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "output Ground4"
+      SrcPort		      1
+      DstBlock		      " 50 Hz\n345kV  "
+      DstPort		      1
+    }
+    Line {
+      Name		      "IdR"
+      SrcBlock		      "idR"
+      SrcPort		      1
+      Points		      [10, 0; 0, 140]
+      DstBlock		      "A>pu"
+      DstPort		      1
+    }
+    Line {
+      Name		      "VdL (pu)"
+      Labels		      [0, 1]
+      SrcBlock		      "V>pu"
+      SrcPort		      1
+      Points		      [-255, 0; 0, 40]
+      Branch {
+	DstBlock		"Rectifier Control"
+	DstPort			2
+      }
+      Branch {
+	Labels			[1, 0]
+	Points			[-70, 0]
+	DstBlock		"RECTIFIER"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Id & Idref (pu)"
+      Labels		      [2, 0]
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      Points		      [50, 0; 0, -20]
+      DstBlock		      "INVERTER"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "idI"
+      SrcPort		      1
+      Points		      [15, 0; 0, 120]
+      DstBlock		      "A>pu3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Id & Idref (pu)"
+      Labels		      [1, 0]
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      DstBlock		      "RECTIFIER"
+      DstPort		      2
+    }
+    Line {
+      Name		      "Id (pu)"
+      Labels		      [0, 0]
+      SrcBlock		      "A>pu"
+      SrcPort		      1
+      Points		      [-20, 0; 0, 90]
+      Branch {
+	Points			[20, 0]
+	DstBlock		"Rectifier Control"
+	DstPort			3
+      }
+      Branch {
+	DstBlock		"Mux2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Rectifier Control"
+      SrcPort		      4
+      Points		      [10, 0; 0, 75; -120, 0; 0, -130]
+      DstBlock		      "Mux2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "0.5 H "
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	DstBlock		"VdLR"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 0]
+	Branch {
+	  DstBlock		  "300 km"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -45]
+	  Branch {
+	    Points		    [0, -70]
+	    DstBlock		    "DC fault"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "ZDC"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "output Ground5"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	DstBlock		"VdLR"
+	DstPort			2
+      }
+      Branch {
+	Points			[-55, 0; 0, -100]
+	DstBlock		"ZDC"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "VdLR"
+      SrcPort		      1
+      Points		      [10, 0; 0, 125]
+      DstBlock		      "V>pu"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "300 km"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	DstBlock		"0.5 H"
+	DstPort			1
+      }
+      Branch {
+	Points			[5, 0]
+	DstBlock		"VdLI"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "output Ground6"
+      SrcPort		      1
+      DstBlock		      "VdLI"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "VdLI"
+      SrcPort		      1
+      Points		      [-15, 0; 0, 125]
+      DstBlock		      "V>pu1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "VdL (pu)"
+      Labels		      [0, 0]
+      SrcBlock		      "V>pu1"
+      SrcPort		      1
+      Points		      [235, 0; 0, 40]
+      Branch {
+	DstBlock		"Inverter Control"
+	DstPort			2
+      }
+      Branch {
+	Labels			[1, 1]
+	DstBlock		"INVERTER"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Id (pu)"
+      Labels		      [0, 0]
+      SrcBlock		      "A>pu3"
+      SrcPort		      1
+      Points		      [65, 0; 0, 115]
+      Branch {
+	DstBlock		"Mux"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Inverter Control"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "Inverter Control"
+      SrcPort		      4
+      Points		      [-20, 0; 0, 80; 160, 0]
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Rectifier"
+      SrcPort		      1
+      DstBlock		      "idR"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Rectifier"
+      SrcPort		      2
+      Points		      [10, 0]
+      DstBlock		      "Ground4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Vref1"
+      SrcPort		      1
+      DstBlock		      "Inverter Control"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Block"
+      SrcPort		      1
+      Points		      [40, 0]
+      Branch {
+	Points			[0, -75]
+	DstBlock		"Rectifier Control"
+	DstPort			6
+      }
+      Branch {
+	Points			[670, 0; 0, -75]
+	DstBlock		"Inverter Control"
+	DstPort			6
+      }
+    }
+    Line {
+      SrcBlock		      "AC fault\nTimer"
+      SrcPort		      1
+      DstBlock		      "A-G Fault"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "S1"
+      SrcPort		      1
+      Points		      [70, 0; 0, -15]
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	Points			[0, -160]
+	DstBlock		"Rectifier Control"
+	DstPort			4
+      }
+      Branch {
+	Points			[590, 0; 0, -160]
+	DstBlock		"Inverter Control"
+	DstPort			4
+      }
+    }
+    Line {
+      SrcBlock		      "Vref2"
+      SrcPort		      1
+      DstBlock		      "Inverter Control"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "DC Fault \nTimer"
+      SrcPort		      1
+      DstBlock		      "DC fault"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Forced delay"
+      SrcPort		      1
+      DstBlock		      "Rectifier Control"
+      DstPort		      7
+    }
+    Line {
+      Name		      "Vabc"
+      Labels		      [0, 0]
+      SrcBlock		      "Meas.Rect"
+      SrcPort		      4
+      Points		      [85, 0; 0, 70]
+      Branch {
+	Points			[0, 80]
+	DstBlock		"Rectifier Control"
+	DstPort			1
+      }
+      Branch {
+	Points			[10, 0]
+	DstBlock		"V_I Rect"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      " 60 Hz\n 500kV"
+      SrcPort		      1
+      DstBlock		      "3- Phase Parallel RLC"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      " 60 Hz\n 500kV"
+      SrcPort		      2
+      DstBlock		      "3- Phase Parallel RLC"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      " 60 Hz\n 500kV"
+      SrcPort		      3
+      DstBlock		      "3- Phase Parallel RLC"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      " 50 Hz\n345kV  "
+      SrcPort		      1
+      DstBlock		      "3- Phase Parallel RLC2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      " 50 Hz\n345kV  "
+      SrcPort		      2
+      DstBlock		      "3- Phase Parallel RLC2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      " 50 Hz\n345kV  "
+      SrcPort		      3
+      DstBlock		      "3- Phase Parallel RLC2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "3- Phase Parallel RLC"
+      SrcPort		      1
+      Points		      [0, -50]
+      Branch {
+	Points			[0, -125]
+	DstBlock		"Meas.Rect"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Filters 60Hz"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "3- Phase Parallel RLC"
+      SrcPort		      2
+      Points		      [0, -35]
+      Branch {
+	Points			[0, -110]
+	DstBlock		"Meas.Rect"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Filters 60Hz"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "3- Phase Parallel RLC"
+      SrcPort		      3
+      Points		      [0, -20]
+      Branch {
+	Points			[0, -95]
+	DstBlock		"Meas.Rect"
+	DstPort			3
+      }
+      Branch {
+	DstBlock		"Filters 60Hz"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "3- Phase Parallel RLC2"
+      SrcPort		      1
+      Points		      [0, -50]
+      Branch {
+	Points			[0, -125]
+	DstBlock		"Meas.Inv"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Filters 50Hz"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "3- Phase Parallel RLC2"
+      SrcPort		      2
+      Points		      [0, -35]
+      Branch {
+	Points			[0, -115]
+	DstBlock		"Meas.Inv"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Filters 50Hz"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "3- Phase Parallel RLC2"
+      SrcPort		      3
+      Points		      [0, -20]
+      Branch {
+	Points			[0, -105]
+	DstBlock		"Meas.Inv"
+	DstPort			3
+      }
+      Branch {
+	DstBlock		"Filters 50Hz"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "Subsystem"
+      SrcPort		      1
+      Points		      [85, 0]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Annotation {
+      Name		      "5000 MVA equivalent\nphi=80 deg. @60 Hz & 3rd h"
+"arm."
+      Position		      [82, 535]
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "10 000 MVA equivalent\nphi=80 deg. @50 Hz & 3rd"
+" harm."
+      Position		      [1047, 550]
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "The 'PreLoadFcn' of psbhvdc12pulse\nautomatical"
+"ly sets 'Ts' to 50e-6 in your Workspace.  "
+      Position		      [389, 684]
+      ForegroundColor	      "red"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      " HVDC 12-pulse Transmission System 1000 MW \n ("
+"500kV-2kA)   50/60 Hz"
+      Position		      [716, 651]
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "Double click on the Help button (?) for details"
+      Position		      [722, 680]
+      FontSize		      12
+    }
+  }
+}
