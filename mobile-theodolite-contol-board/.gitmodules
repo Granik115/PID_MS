@@ -1,0 +1,7 @@
+[submodule "src/theodolite/logic"]
+	path = src/theodolite/logic
+	url = http://git.nic.etu/oes/firmware/theodolite-firmware-logic.git
+[submodule "firmware"]
+	path = firmware
+	url = http://git.nic.etu/cpp-libs/firmware.git
+	

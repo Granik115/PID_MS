@@ -1,0 +1,15 @@
+/*
+ * Wire.h
+ *
+ *  Created on: Aug 26, 2024
+ *      Author: mvm
+ */
+
+#ifndef THEODOLITE_PERIPHERAL_ARDUINO_PORT_WIRE_H_
+#define THEODOLITE_PERIPHERAL_ARDUINO_PORT_WIRE_H_
+
+
+
+
+
+#endif /* THEODOLITE_PERIPHERAL_ARDUINO_PORT_WIRE_H_ */
