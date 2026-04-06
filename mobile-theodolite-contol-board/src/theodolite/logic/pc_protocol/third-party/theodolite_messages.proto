@@ -1,0 +1,273 @@
+syntax = "proto2";
+import "timesync-messages.proto";
+package theodolite.messages;
+
+/* СООБЩЕНИЯ ПРОТОКОЛА ИНФОРМАЦИОННОГО ВЗАИМОДЕЙСТВИЯ */
+
+/* Конверт, который включает все пересылаемые сообщения. Может содержать только одно сообщение + идентификатор запроса. */
+message CommandEnvelope {
+  required uint32 request_id = 1; // Идентификатор запроса (счётчик)
+  optional Ack ack = 2;
+  optional Nak nak = 3;
+
+  optional StateReq state_req = 4;
+  optional State state = 5;
+  optional RotateToCoordinatesReq rotate_to_coordinates_req = 6;
+  optional AdjustShootingSettingsRequest adjust_shooting_settings_req = 7;
+  optional TestReq test_req = 8;
+
+  optional SetPidRegulatorCoeffReq set_regulator_coeff = 9; // Установить коэффициенты PID-регулятора (для серийного ТП)
+  optional SetAnglesDelta set_angles_delta = 10; // Установить смещения углов относительно истинного 0
+}
+
+/* Положительное подтверждение (положительная квитанция) на запрос (англ. Positive Acknowledgement (ACK)) */
+message Ack {
+}
+
+/* Отрицательное подтверждение (англ. Negative AcKnowledgment (NAK)) */
+message Nak {
+  required string what = 1; // Причина отказа (произвольная строка с описанием ошибки)
+}
+
+/* Команда поворота */
+message RotateToCoordinatesReq {
+  required Direction turner_position = 1; // параметры поворота
+  optional bool is_auto_blocking_mode = 2;
+}
+
+/* Установить параметры съемки */
+message AdjustShootingSettingsRequest {
+  required CameraSettings camera_settings = 1; // параметры камеры
+  optional uint32 camera_id = 2; // если не установлен, то для всех
+}
+
+/* Направление теодолита в миллисекундах от 0 до 1295999999 (360*60*60*1000 - 1) (разрядность датчиков – 2^24 на оборот для ОЭС-ТИК-М) */
+message Direction {
+  required uint32 azimuth = 1; // Азимут
+  required uint32 elevation = 2; // Угол места
+}
+
+/* Показания инклинометра в миллисекундах (разрядность датчиков – 214 для ОЭС-ТИК-М)  */
+message InclinometerParameters {
+  required int32 x = 1;
+  required int32 y = 2;
+}
+
+/* Параметры камеры */
+/* Относительное отверстие диафрагмы:
+0  1:2
+1  1:2,8
+2  1:4
+3  1:5,6
+4  1:8
+5  1:11
+6  1:16
+7  1:22
+8  1:32
+9  1:45
+10  1:64
+11  1:90
+12  1:128
+13  1:180
+14  1:256
+15  1:360 */
+message CameraSettings {
+  required uint32 exposure = 1; // Выдержка в микросекундах
+  required uint32 gain = 2; // коэффициент усиления (битовый сдвиг для изображения, 0-4)
+  optional uint32 bit_count = 3; // битность изображения (8 - 12)
+  optional uint32 blind = 4; //  / Код позиции диафрагмы (от 0 до 15)
+  optional ExposureType exposure_type = 5; // Тип экспозиции
+  optional SynchronizationType sync_type = 6; // Тип синхронизации (для серийного ТП)
+  optional timesync.messages.Frequency freq = 7; // Частоты работы камеры
+  optional uint32 amplification = 8; // усиление (0..255)
+}
+
+message CameraInfo {
+  required uint32 camera_id = 1; // Номер канала, может принимать значение 1 (1ШК), 2 (2ШК), 3 (3ШК), 4 (4ШК) или 5 (ЦК)
+  required CameraSettings camera_settings = 2; // параметры камеры
+}
+
+message BlockingMode {
+  required bool is_auto_blocking_mode = 1 [default = true];
+  required bool is_azimuth_blocked = 2 [default = false]; // Признак активации тормоза по азимуту (true - на тормоз подаётся напряжение)
+  required bool is_elevation_blocked = 3 [default = false]; // Признак активации тормоза по углу места (true - на тормоз подаётся напряжение)
+}
+
+/* Запрос состояния ТП */
+message StateReq {
+}
+
+/* Состояние ТП */
+message State {
+  message Testing {
+    required Test test = 1;//текущий тест
+    optional bool is_passed = 2;//Признак прохождения теста
+  }  
+
+  required Direction turner_position = 1; // Текущее положение ТП
+  required InclinometerParameters inclinometer_parameters = 2; //  Показания инклинометра 
+  repeated CameraInfo camera_info = 3;
+  required StateType state = 4 [default = UNKNOWN_STATE]; // Состояние, в котором находится ТП
+  required BlockingMode blocking_mode = 5; // Состояние блокировки тормозов
+  optional bool sun = 6 [default = false]; // Признак наличия излучения Солнца (true - солнце есть)
+  required bool azimuth_drive_activity = 7 [default = false]; // Признак активации привода по азимуту; true - на привод подаётся напряжение
+  required bool elevation_drive_activity = 8 [default = false]; // Признак активации привода по углу места; true - на привод подаётся напряжение
+  
+  optional timesync.messages.Synchroimpulse synchroimpulse = 9; // Полученный с БЧВО код времени синхроимпульса
+  repeated Error errors = 10; // Массив с возникшими ошибками, если пустой - предполагается исправность
+
+  optional PidRegulatorCoeffInfo regulator_coeff = 11; // для серийного тп
+  optional Direction angles_delta = 12; // Смещения углов относительно истинного 0
+  optional Testing testing = 13;//Состояние автотестирования
+  repeated ManualControllerEvent manual_controller_events = 14;//Сообщение о нажатых кнопках пульта
+  optional EncoderBoardState encoder_board_state = 15;//Состояние платы формирователя кода
+}
+
+/* Команда активации режима тестирования */
+message TestReq {
+}
+
+message PidRegulatorCoeff{
+  required float proportional_gain = 1;
+  required float integral_gain = 2;
+  required float differential_gain = 3;
+  required float integral_correction_gain = 4;
+}
+
+message PidRegulatorCoeffInfo{
+  optional PidRegulatorCoeff azimuth_regulator = 1;
+  optional PidRegulatorCoeff elevation_regulator = 2;
+}
+
+message SetPidRegulatorCoeffReq{
+  required PidRegulatorCoeffInfo regulator_info = 1;
+}
+
+message SetAnglesDelta{
+  required Direction delta = 1;
+}
+
+message EncoderBoardState {
+  required AxisPosition azimuth_position = 1; 
+  required AxisPosition elevation_position  = 2;
+  optional int32 azimuth_velocity = 3; // векторная скорость поворота по азимуту размерность [ед.датчика/мс]
+  optional int32 elevation_velocity = 4; // векторная скорость поворота по углу места размерность [ед.датчика/мс]
+}
+
+/* ВСПОМОГАТЕЛЬНЫЕ СТРУКТУРЫ ДАННЫХ, ИСПОЛЬЗУЮЩИЕСЯ В СООБЩЕНИЯХ */
+
+enum StateType {
+  IDLE = 0; // Готов к приёму команд
+  ROTATION = 1; // ТП отрабатывает команду поворота
+  TESTING = 2;  // Автотестирование
+  MANUAL_IDLE = 3; // Подключен пульт местного управления, ТП неподвижен
+  MANUAL_ROTATION = 4; // Подключен пульт местного управления, поворот с помощью пульта местного управления
+
+  UNKNOWN_STATE = 5;
+}
+
+enum ManualControllerEvent {
+  AZIMUTH_INCREMENT_PRESSED_EVENT = 1;
+  AZIMUTH_INCREMENT_RELEASED_EVENT = 2;
+  AZIMUTH_DECREMENT_PRESSED_EVENT = 3;
+  AZIMUTH_DECREMENT_RELEASED_EVENT = 4;
+  ELEVATION_INCREMENT_PRESSED_EVENT = 5;
+  ELEVATION_INCREMENT_RELEASED_EVENT = 6;
+  ELEVATION_DECREMENT_PRESSED_EVENT = 7;
+  ELEVATION_DECREMENT_RELEASED_EVENT = 8;
+  CONTROLLER_CONNECT_EVENT = 9;
+  CONTROLLER_DISCONNECT_EVENT = 10;
+}
+
+enum Test {
+  AZIMUTH_MOVE_TEST = 1; // Тест драйвера азимута и обратной связи по току 
+  ELAVATION_MOVE_TEST = 2; // Тест драйвера угла места и обратной связи по току 
+  CAMERA_UART_KEY_TEST = 3; // Тест ключа управления камерой
+  ENCODER_LOOPBACK_TEST = 4; // Тест приемопередачи интерфейса обмена с формирователем кода
+  ONBOARD_FLASH_TEST = 5; // Тест записи/чтения микросхемы flash на плате
+  ONBOARD_EEPROM_TEST = 6; // Тест записи/чтения микросхемы eeprom на плате
+  INCOMING_SYNCHROIMPULSE_TEST = 7; // Тест приема внешнего синхроимпульса
+}
+
+enum AxisPosition {
+  UNKNOWN_POSITION = 0; // Неинициализированное состояние оси после включения
+  NORMAL_POSITION = 1; // Положение между нулевой меткой и микропереключателем на большом угле
+  OVER_ZERO_POSITION = 2; // Положение оси между нулевой меткой и микропереключателем возле нулевой метки 
+}
+
+message Error
+{
+  required Device device = 1;   // устройство, у которого выявлена неисправность
+  repeated ErrorType error = 2; // коды ошибок для данного устройства
+}
+
+enum Device
+{
+  CAMERA_1 = 0; // 1 (1ШК), 2 (2ШК), 3 (3ШК), 4 (4ШК) или 5 (ЦК)
+  CAMERA_2 = 1;
+  CAMERA_3 = 2;
+  CAMERA_4 = 3;
+  CAMERA_5 = 4;
+  SYNC_MODULE = 5; // БЧВО
+  AZIMUTH_DRIVE = 6;
+  ELEVATION_DRIVE = 7;
+  THEODOLITE = 8; // управляющий контроллер теодолитом
+  INCLINOMETER = 9;
+  CONTROL_PC = 10;
+}
+
+enum ErrorType
+{
+  UNKNOWN_ERROR = 0;
+  CAMERA_ERROR_OFFLINE = 1;
+  CAMERA_ERROR_SET_SYNC_FREQ = 2; // невозможно установить требуемую частоту синхронизации
+  CAMERA_ERROR_SET_EXPOSURE	= 3; // невозможно установить требуемую выдержку
+  CAMERA_ERROR_SET_SHIFT = 4; // невозможно установить требуемый коэффициент усиления (битовый сдвиг для изображения)
+  CAMERA_ERROR_SET_BIT_COUNT = 5; // невозможно установить требуемую битность изображения
+  CAMERA_ERROR_SET_GAIN = 6; // невозможно установить требуемое усиление
+  CAMERA_ERROR_SET_BLIND = 7;
+  SYNCHRO_ERROR_BAD_SYNCHRO_IMPULSE = 8;
+  SYNCHRO_ERROR_BAD_SYNCHRO_PROTOBUF = 9;
+  AZIMUTH_ERROR_OFFLINE = 10;
+  ELEVATION_ERROR_OFFLINE = 11;
+  AZIMUTH_ERROR_BAD_ANSWER = 12;
+  ELEVATION_ERROR_BAD_ANSWER = 13;
+  AZIMUTH_ERROR_POSITION_MISMATCH = 14;
+  ELEVATION_ERROR_POSITION_MISMATCH = 15;
+  PROTOBUF_ERROR_ENCODE_STATE_FOR_CAMERAS = 16;
+  ERROR_INCLINOMETER_OFFLINE = 17;
+  ERROR_INCLINOMETER_PACKET_ERROR_DECODE = 18;
+  PC_ERROR_DECODE = 19;
+  PC_ERROR_UNKNOW_COMMAND = 20;
+  PC_ERROR_SWITCH_STATE = 21;
+
+  //в целях ускорения отладки, предлагаю зарезервировать еще несколько полей:
+  DEBUG_ERROR_1 = 30; // назначение произвольное
+  DEBUG_ERROR_2 = 31;
+  DEBUG_ERROR_3 = 32;
+  DEBUG_ERROR_4 = 33;
+  DEBUG_ERROR_5 = 34;
+
+  SYNCHRO_ERROR_NO_SYNC_MORE_3S = 50; // отсутствие синхропосылки более 3с
+
+  BLIND_ERROR_OFFLINE = 60; // не поступают ответы от контроллера управления диафрагмой
+  BLIND_ERROR_CANT_SET = 61; // невозможно выставить требуемое значение диафрагмы
+  BLIND_ERROR_BLIND_MISMATCH = 62; // фактическое значение диафрагмы отличается от требуемого
+  AZIMUTH_LOCKED = 63; // Напряжение на двигатель подается, но движения по азимуту нет
+  ELEVATION_LOCKED = 64; // Напряжение на двигатель подается, но движения по углу места нет
+}
+
+enum ExposureType
+{
+  MANUAL_EXPOSURE  = 0;
+  AUTOMATIC_EXPOSURE  = 1;
+};
+
+/* Только для серийного ТП */
+enum SynchronizationType
+{
+  AUTO = 0;
+  BEGIN = 1;
+  MIDDLE = 2;
+  END = 3;
+};

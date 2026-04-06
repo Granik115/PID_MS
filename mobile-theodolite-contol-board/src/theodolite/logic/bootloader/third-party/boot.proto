@@ -1,0 +1,137 @@
+syntax = "proto2";
+
+/*Предполагается слияние с основным протоколом ТП*/
+message CommandEnvelope {
+  required uint32 request_id = 1; // Идентификатор запроса (счётчик)
+  required Target target = 2;
+    
+  optional StateReq state_req = 3;
+  optional State state = 4;
+  optional FirmwareSegment segment = 5; 
+  optional VerifyFlashCrcReq verify_crc_req = 6; 
+  optional VerifyStatus verify_status = 7;
+  optional EraseReq erase_req = 8;
+  optional StartApplicationReq start_application_req = 9;
+  optional VersionReq version_req = 10;
+  optional Version version_info = 11; 
+}
+
+message StartApplicationReq
+{
+}
+
+message StateReq
+{
+}
+
+message EraseReq
+{
+}
+
+message VersionReq
+{
+}
+
+message Target
+{
+  required TargetBoard target_board = 1 [default = PROCESSOR_BOARD];// целевая плата
+  required SectorType sector = 2 [default = APPLICATION_SECTOR];//тип области принадлежности команды
+}
+
+message Version
+{
+  required string app_version = 1;
+  required string boot_version = 2;
+  required PlatformType platform = 3;
+}
+
+message VerifyStatus
+{
+  required bool is_crc_ok= 1;
+}
+
+message VerifyFlashCrcReq
+{
+  required uint32 crc = 1;
+}
+
+message State
+{  
+  required StateType state = 1;  
+  required FirmwareSegmentHead last_segment_head = 2;
+  optional Error error = 3;
+}
+
+enum SectorType
+{
+  BOOTLOADER_SECTOR = 1;
+  APPLICATION_SECTOR = 2;
+}
+
+enum TargetBoard
+{
+  PROCESSOR_BOARD = 1;
+  ENCODER_BOARD = 2;
+  CAMERA = 3;
+}
+
+enum OperationType
+{
+  WRITE = 1;
+  VERIFY = 2;
+  ERASE = 3;
+}
+
+enum StateType
+{
+  WAIT_COMMAND = 1;
+  IDLE = 2;
+  ERASING_FLASH = 3;
+  WRITING_FLASH = 4; 
+  VERIFYING_FLASH = 5;
+  ERROR = 6;
+}
+
+enum ErrorType
+{
+  VERIFY_ERROR = 1;
+  ERASE_ERROR = 2;
+  WRITE_ERROR = 3;
+  SEGMENT_SIZE_EVEN_ERROR = 4; 
+  SECTOR_OVERFLOW_ERROR = 5;
+  SEGMENT_SEQUENCE_ERROR = 6;
+  UNKNOWN_ERROR = 7;
+}
+
+enum PlatformType
+{
+  TMS320 = 1;
+  ARM = 2;
+}
+
+message FlashStatus
+{
+ required uint32  first_fail_addr = 1;
+ required uint32  expected_data = 2;
+ required uint32  actual_data = 3;  
+}
+
+message Error
+{
+  optional FlashStatus status = 1;// статус flash
+  required ErrorType error = 2;
+}
+
+message FirmwareSegmentHead
+{
+  required uint32 segment_end_number = 1;//номер последнего байта в сегменте относительно начала прошивки начиная с 1
+  required OperationType operation = 2;
+}
+
+message FirmwareSegment
+{ 
+  required FirmwareSegmentHead firmware_segment_head = 1;//заголовок сегмента
+  required bytes firmware_segment_data = 2;//данные сегмента в октетах
+  optional bool last_segment = 3; // сообщает бутлоадеру, что сегмент последний
+}
+

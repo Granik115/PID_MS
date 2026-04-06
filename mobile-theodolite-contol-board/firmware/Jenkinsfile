@@ -1,0 +1,2 @@
+buildCppProject platforms: [[name: 'fedora_33', flags: '-DWITH_TESTS=On']]
+

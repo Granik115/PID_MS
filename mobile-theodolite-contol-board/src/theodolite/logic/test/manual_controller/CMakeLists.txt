@@ -1,0 +1,4 @@
+get_filename_component(package_name ${CMAKE_CURRENT_LIST_DIR} NAME)
+add_executable("${package_name}_test" manual_controller_test.cpp)
+target_link_libraries("${package_name}_test" ${package_name} firmware move_controller external_controls ${GTEST_BOTH_LIBRARIES} ${GMOCK_MAIN_LIBRARY} ${GMOCK_LIBRARY} soft_timer local_clock)
+add_test(NAME "${package_name}_test" COMMAND "${package_name}_test")

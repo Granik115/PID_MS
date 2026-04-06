@@ -1,0 +1,123 @@
+﻿/*
+Временные метки, которые представлены типом string, должны быть в формате ISO 8601: YYYYMMDDThhmmss.ffffff 
+например: 19851019T050107.333000 - 19 октября 1985 года 5 часов 1 минута 7 секунд 333 миллисекунды
+например: 19851019T050107.000010 - 19 октября 1985 года 5 часов 1 минута 7 секунд 10 микросекунд
+
+Кодировка строк - UTF8
+*/
+syntax = "proto2";
+package timesync.messages;
+
+
+import "nanopb.proto";
+enum Frequency
+{
+  HERTZ_16 = 0;
+  HERTZ_8 = 1;
+  HERTZ_4 = 2;
+  HERTZ_2 = 3;
+  HERTZ_1 = 4;
+  HERTZ_0_5 = 5;
+}
+
+enum TimeSourceType
+{
+  DIGITAL_SEV = 0;
+  ANALOG_SEV = 1;
+  GNSS = 2;
+  INTERNAL = 3;
+}
+
+enum DigitalSevInterfaceType
+{
+  RS232 = 0;
+  RS485 = 1;
+}
+
+enum ErrorType
+{
+  SEV_PPS_PERIOD_ERROR = 0;
+  SEV_PPS_MISS_ERROR = 1;
+  SEV_PPM_MISS_ERROR = 2;
+  GNSS_PPS_MISS_ERROR = 3;
+  GNSS_PPS_PERIOD_ERROR = 4;
+  GNSS_MESSAGE_MISS_ERROR = 5;
+  GNSS_GLONASS_MISS_ERROR = 6;
+  GNSS_SOLUTION_UNRELIABLE_ERROR = 7;
+  DIGITAL_SEV_TIMECODE_UNRELIABLE_ERROR = 8;
+  DIGITAL_SEV_TIMECODE_MISS_ERROR = 9;
+  DIGITAL_SEV_TIMECODE_CRC_ERROR = 10;
+
+  UNKNOWN_ERROR = 11;
+}
+
+message SetMode
+{
+  required Frequency frequency = 1;
+  required TimeSourceType time_source_type = 2;
+  required bool synchronization_shift_mode = 3;
+  required uint32 impulse_shift_time_us = 4;
+  required DigitalSevInterfaceType digital_sev_interface_type = 5;
+  optional uint32 theodolite_number = 6;
+}
+
+message SetTime
+{
+  required string time = 1[(nanopb).max_size = 25];
+}
+
+message State
+{
+  required Frequency frequency = 1;
+  required TimeSourceType time_source_type = 2;
+  required bool synchronization_shift_mode = 3;
+  required uint32 impulse_shift_time_us = 4;
+  required DigitalSevInterfaceType digital_sev_interface_type = 5;
+  repeated TimeSourceType available_time_sources = 6[(nanopb).max_count = 4];
+  repeated ErrorType errors = 7[(nanopb).max_count = 12];
+}
+
+message Synchroimpulse
+{
+  required string time = 1[(nanopb).max_size = 25];
+  required uint32 synchroimpulse_number = 2;
+  required State state = 3;
+}
+
+message GetDebugInfo
+{
+}
+
+message SatelliteSignalLevel
+{
+  required uint32 satellite_number = 1;
+  required uint32 signal_to_noise_ratio = 2; 
+}
+
+message DebugInfo
+{
+  optional string gga = 1[(nanopb).max_size = 80];
+  optional NavigationData navigation_data = 2;
+  optional uint32 pps_gnss_period_ticks = 3;// ticks on 50 MHz
+  optional uint32 pps_sev_period_ticks = 4;// ticks on 50 MHz
+  repeated SatelliteSignalLevel satellites_signal_level = 5[(nanopb).max_count = 9]; 
+  optional uint32 satellites_in_gnss_solution = 6;
+}
+
+message NavigationData
+{
+  required uint32 time = 1;
+  required uint32 date = 2;
+  required bool correctness = 3;
+  required double latitude = 4;
+  required double longitude = 5;
+}
+
+message Envelope
+{
+  optional SetMode set_mode = 1;
+  optional SetTime set_time = 2;
+  optional Synchroimpulse synchroimpulse = 3;
+  optional GetDebugInfo get_debug_info = 4;
+  optional DebugInfo debug_info = 5;
+}

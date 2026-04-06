@@ -1,0 +1,5 @@
+set(SRCS encoder_protocol.cpp)
+set(HEADERS encoder_protocol_interface.h encoder_protocol.h)
+
+get_filename_component(package_name ${CMAKE_CURRENT_LIST_DIR} NAME)
+add_library(${package_name} ${SRCS} ${HEADERS})

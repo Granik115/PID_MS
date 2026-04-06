@@ -1,0 +1,74 @@
+/*
+Временные метки, которые представлены типом string, должны быть в формате ISO 8601: YYYYMMDDThhmmss.ffffff 
+например: 19851019T050107.333000 - 19 октября 1985 года 5 часов 1 минута 7 секунд 333 миллисекунды
+например: 19851019T050107.000010 - 19 октября 1985 года 5 часов 1 минута 7 секунд 10 микросекунд
+
+Кодировка строк - UTF8
+*/
+
+syntax = "proto2";
+
+package timesync.messages;
+
+enum Frequency
+{
+  HERTZ_16 = 0;
+  HERTZ_8 = 1;
+  HERTZ_4 = 2;
+  HERTZ_2 = 3;
+  HERTZ_1 = 4;
+  HERTZ_0_5 = 5;
+}
+
+enum TimeSourceType
+{
+  DIGITAL_SEV = 0;
+  ANALOG_SEV = 1;
+  GNSS = 2;
+  INTERNAL = 3;
+}
+
+message SetMode
+{
+  required Frequency frequency = 1;
+  required TimeSourceType time_source_type = 2;
+  required bool synchronization_shift_mode = 3 [default = false];
+}
+
+message SetTime
+{
+  required string time = 1;
+}
+
+message State
+{
+  required Frequency frequency = 1;
+  required TimeSourceType time_source_type = 2;
+  required bool synchronization_shift_mode = 3;
+  repeated TimeSourceType available_time_sources = 4;
+}
+
+message Synchroimpulse
+{
+  required string time = 1;
+  required uint32 synchroimpulse_number = 2;
+  required State state = 3;
+}
+
+message GetDebugInfo
+{
+}
+
+message DebugInfo
+{
+  required string gga = 1;
+}
+
+message Envelope
+{
+  optional SetMode set_mode = 1;
+  optional SetTime set_time = 2;
+  optional Synchroimpulse synchroimpulse = 3;
+  optional GetDebugInfo get_debug_info = 4;
+  optional DebugInfo debug_info = 5;
+}

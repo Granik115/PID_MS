@@ -1,0 +1,3 @@
+FirmwareSegment.firmware_segment_data         max_size:200
+Version.boot_version                		  max_size:32
+Version.app_version                           max_size:32

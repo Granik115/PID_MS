@@ -1,0 +1,13 @@
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+#add_subdirectory(camera_protocol)
+add_subdirectory(pc_protocol)
+#add_subdirectory(software_uart)
+add_subdirectory(ramp_control)
+add_subdirectory(pwm)
+add_subdirectory(axis_mover)
+add_subdirectory(manual_controller)
+add_subdirectory(move_controller)
+#add_subdirectory(encoder)
+add_subdirectory(encoder_board_protocol)
+add_subdirectory(encoder_board)
